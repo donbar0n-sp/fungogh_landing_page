@@ -9,43 +9,9 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
       background: #0f0f1f;
-      color: #f5f5f5;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Poiret One', cursive;
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #eacda3, #d6ae7b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      z-index: 3;
-    }
-
-    p {
-      font-size: 1.5rem;
-      opacity: 0.85;
-      z-index: 3;
-    }
-
-    .logo-glow {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: #66ffcc;
-      opacity: 0.8;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      z-index: 3;
     }
 
     .background-container {
@@ -93,6 +59,40 @@
       0%, 100% { opacity: 0.7; }
       50% { opacity: 0.9; }
     }
+
+    .text-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 3;
+      color: #f5f5f5;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .text-content h1 {
+      font-family: 'Poiret One', cursive;
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #eacda3, #d6ae7b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-content p {
+      font-size: 1.5rem;
+      opacity: 0.85;
+    }
+
+    .logo-glow {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #66ffcc;
+      opacity: 0.8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
@@ -118,11 +118,14 @@
   <div class="star-hotspot" style="top: 36%; left: 23%; width: 80px; height: 80px;">
     <div class="glow"></div>
   </div>
-</div>
 
-<h1>Fungogh</h1>
-<p id="typewriter"></p>
-<div class="logo-glow">AI. Creativity. Reimagined.</div>
+  <!-- Text content centered -->
+  <div class="text-content">
+    <h1>Fungogh</h1>
+    <p id="typewriter"></p>
+    <div class="logo-glow">AI. Creativity. Reimagined.</div>
+  </div>
+</div>
 
 <script>
   // Typewriter effect
@@ -148,3 +151,4 @@
 </script>
 </body>
 </html>
+
