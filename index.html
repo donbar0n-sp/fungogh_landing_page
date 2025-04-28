@@ -98,7 +98,7 @@
 
     // Twinkling stars effect
     document.addEventListener("mousemove", (e) => {
-      const brightness = 0.5 + (e.clientY / window.innerHeight) * 0.3;
+      const brightness = 0.5 + (e.clientY / window.innerHeight) * 0.1;
       const blur = 3 + (e.clientX / window.innerWidth) * 2;
 
       document.querySelector('.van-gogh-bg').style.filter = `brightness(${brightness}) blur(${blur}px)`;
