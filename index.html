@@ -95,6 +95,14 @@
       const y = (e.clientY / window.innerHeight - 0.5) * 10;
       document.querySelector('.van-gogh-bg').style.transform = `translate(${x}px, ${y}px)`;
     });
+
+    // Twinkling stars effect
+    document.addEventListener("mousemove", (e) => {
+      const brightness = 0.5 + (e.clientY / window.innerHeight) * 0.3;
+      const blur = 3 + (e.clientX / window.innerWidth) * 2;
+
+      document.querySelector('.van-gogh-bg').style.filter = `brightness(${brightness}) blur(${blur}px)`;
+    });
 </script>
 </body>
 </html>
