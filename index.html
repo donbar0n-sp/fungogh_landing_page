@@ -89,17 +89,21 @@
     }
     typeWriter();
 
-    // Parallax effect
     document.addEventListener("mousemove", (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 10;
       const y = (e.clientY / window.innerHeight - 0.5) * 10;
-      document.querySelector('.van-gogh-bg').style.transform = `translate(${x}px, ${y}px)`;
-    });
 
-    // Twinkling stars effect
-    document.addEventListener("mousemove", (e) => {
-      const brightness = 0.5 + (e.clientY / window.innerHeight) * 0.1;
-      const blur = 3 + (e.clientX / window.innerWidth) * 2;
+      // Centered blur logic
+      const distanceFromCenter = Math.abs((e.clientX / window.innerWidth) - 0.5) * 2; // 0 (center) to 1 (edge)
+      const blur = 6 - distanceFromCenter * 3; // 6px blur at center, 3px blur at edges
+
+      // Slightly calmer brightness (optional)
+      const brightness = 0.6 + (e.clientY / window.innerHeight) * 0.1; 
+
+      const bg = document.querySelector('.van-gogh-bg');
+      bg.style.transform = `translate(${x}px, ${y}px)`;
+      bg.style.filter = `brightness(${brightness}) blur(${blur}px)`;
+    });
 
       document.querySelector('.van-gogh-bg').style.filter = `brightness(${brightness}) blur(${blur}px)`;
     });
